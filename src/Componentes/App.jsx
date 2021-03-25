@@ -39,18 +39,22 @@ function App() {
         <>
             <Header />
             <AreaNuevaNota setearNota={setearNota} agregarNuevasNotas={agregarNuevasNotas} />
-            <div className="div-sin-notas">{listaNotas.length === 0 ? "No hay notas que mostrar" : ""}</div>
-            <ul>
-                {listaNotas.map( (notita, indice) => {
-                    return <Nota 
-                        key={indice} 
-                        id={indice} 
-                        titulo={notita.titulo} 
-                        contenido={notita.contenido}
-                        btnBorrar={borrarNota}
-                     />
-                })}               
-            </ul>
+            {listaNotas.length === 0 ? 
+                <div className="div-sin-notas">No hay notas que mostrar</div> : 
+                <div className="lista-notas">
+                    <ul>
+                        {listaNotas.map( (notita, indice) => {
+                            return <Nota 
+                            key={indice} 
+                            id={indice} 
+                            titulo={notita.titulo} 
+                            contenido={notita.contenido}
+                            btnBorrar={borrarNota}
+                            />
+                        })}               
+                    </ul>
+                </div>}
+            
             <Footer />
         </>
     );

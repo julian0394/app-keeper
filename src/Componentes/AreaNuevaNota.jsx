@@ -32,7 +32,7 @@ const AreaNuevaNota = (props) => {
     
     return ( 
         <div>
-            <form>
+            <form className="crear-nota">
                 <input 
                     onChange={manejoCambioInput}
                     value={input.titulo}

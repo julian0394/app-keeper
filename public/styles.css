@@ -1,4 +1,4 @@
-* {
+  * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -25,17 +25,19 @@
   }
   
   footer {
-    position: absolute;
+    /* position: absolute;*/
+    position: fixed;
     text-align: center;
     bottom: 0;
-    width: 100%;
+    width: 95%;
     height: 2.5rem;
+    cursor: default;
   }
   
   footer p {
     color: #ccc;
   }
-  .note {
+  .nota {
     background: #fff;
     border-radius: 7px;
     box-shadow: 0 2px 5px #ccc;
@@ -44,22 +46,22 @@
     margin: 16px;
     float: left;
   }
-  .note h1 {
+  .nota h1 {
     font-size: 1.1em;
     margin-bottom: 6px;
   }
-  .note p {
+  .nota p {
     font-size: 1.1em;
     margin-bottom: 10px;
     white-space: pre-wrap;
     word-wrap: break-word;
   }
   
-  .note button {
+  .nota button {
     background-color: #fff;
     position: relative;
     float: right;
-    margin-right: 25px;
+    /* margin-right: 25px; */
     color: #f5ba13;
     border: none;
     width: 36px;
@@ -67,6 +69,12 @@
     cursor: pointer;
     outline: none;
   }
+  .nota button:hover {
+    color: #f8d061;
+  }
+  .nota button:active {
+    color: #d39f10;
+}
   
   form {
     position: relative;
@@ -107,9 +115,23 @@
   form .btn-agregar {
     font-size:  2rem;
   }
+  .btn-agregar:hover {
+    background-color: #f6ca51; 
+  }
+  .btn-agregar:active {
+      background-color: #d39f10;
+  }
 
   .div-sin-notas {
       text-align: center;
-      margin-top: 10rem;
+      margin-top: 25vh;
       color: gray;
+      cursor: default;
   }
+
+  .lista-notas {
+      display: flex;
+      margin-top: 6rem;
+  }
+
+  

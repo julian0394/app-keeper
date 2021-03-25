@@ -1,15 +1,17 @@
 import React from 'react';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 function Nota(props) {
     return (
-        <div className="note">
+        <div className="nota">
             <h1>{props.titulo}</h1>
             <p>{props.contenido}</p>
             <button onClick={ () => {
-                props.btnBorrar(props.id);
-            }}>BORRAR</button>
+                props.btnBorrar(props.id);}}>
+                <DeleteIcon />
+            </button>
         </div>
     );
 }
 
-export default Nota;
+export default Nota;    
