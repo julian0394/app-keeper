@@ -1,10 +1,11 @@
 
 import React, {useState} from 'react';
 
-import Header from './Header';
-import Footer from './Footer';
-import Nota from './Nota';
-import AreaNuevaNota from './AreaNuevaNota'
+import Header from './header/Header';
+import Footer from './footer/Footer';
+import Nota from './nota/Nota';
+import AreaNuevaNota from './areaNuevaNota/AreaNuevaNota';
+import Login from './login/Login';
 // import notas from '../notas';
 
 function App() {
@@ -25,6 +26,13 @@ function App() {
         });
     }
 
+    //STATE DE RUTA PARA INICIO DE SESIÓN, REGISTRO Y USO
+    const [ruta, setRuta] = useState('login');
+
+    function cambiarRuta(destino) {
+        setRuta(destino);
+    }
+
     function borrarNota(indiceABorrar) {
         setListaNotas((valorPrevio) => {
             return valorPrevio.filter(
@@ -37,24 +45,26 @@ function App() {
 
     return (
         <>
-            <Header />
-            <AreaNuevaNota setearNota={setearNota} agregarNuevasNotas={agregarNuevasNotas} />
-            {listaNotas.length === 0 ? 
-                <div className="div-sin-notas">No hay notas que mostrar</div> : 
-                <div className="lista-notas">
-                    <ul>
-                        {listaNotas.map( (notita, indice) => {
-                            return <Nota 
-                            key={indice} 
-                            id={indice} 
-                            titulo={notita.titulo} 
-                            contenido={notita.contenido}
-                            btnBorrar={borrarNota}
-                            />
-                        })}               
-                    </ul>
-                </div>}
-            
+            <Header />           
+            <div className="div-logeado"> 
+                <Login />
+                <AreaNuevaNota setearNota={setearNota} agregarNuevasNotas={agregarNuevasNotas} />
+                {listaNotas.length === 0 ? 
+                    <div className="div-sin-notas">No hay notas que mostrar</div> : 
+                    <div className="lista-notas">
+                        <ul>
+                            {listaNotas.map( (notita, indice) => {
+                                return <Nota 
+                                    key={indice} 
+                                    id={indice} 
+                                    titulo={notita.titulo} 
+                                    contenido={notita.contenido}
+                                    btnBorrar={borrarNota}
+                                />
+                            })}               
+                        </ul>
+                    </div>}
+            </div>   
             <Footer />
         </>
     );

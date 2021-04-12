@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import './areaNuevaNota.css';
 
 const AreaNuevaNota = (props) => {
     //State de los input ingresados ne la nueva nota
