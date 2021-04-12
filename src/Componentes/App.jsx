@@ -11,7 +11,7 @@ import Login2 from './login/Login2';
 
 function App() {
     //STATE DE NOTA
-    const [nota, setNota] = useState({});
+    const [nota, setNota] = useState({}); 
     
     function setearNota(nuevaNota) {
         setNota(nuevaNota);
@@ -28,17 +28,10 @@ function App() {
     }
 
     //STATE DE RUTA PARA INICIO DE SESIÓN, REGISTRO Y USO
-    const [ruta, setRuta] = useState({
-        inicio: true,
-        registro: false,
-        ingreso: false
-    });
+    const [ruta, setRuta] = useState('login'); // Se manejaran 3 estados: login, signup y notas.
 
-    function cambiarRuta() {
-        
-        setRuta( (valorPrev) => {
-            return !valorPrev;
-        });
+    function cambioRuta(nuevaRuta) {  
+        setRuta(nuevaRuta)
     }
 
     function borrarNota(indiceABorrar) {
@@ -53,13 +46,15 @@ function App() {
 
     return (
         <>
-            <Header />           
+            <Header ruta={ruta} cambioRuta={cambioRuta} />           
             <div className="div-logeado"> 
-                {/* {ruta === 'login' ? <Login2 /> : <AreaNuevaNota />} */}
-                <Login2 ruta={ruta} setRuta={setRuta} />
-                <AreaNuevaNota setearNota={setearNota} agregarNuevasNotas={agregarNuevasNotas} />
-                {listaNotas.length === 0 ? 
+                {(ruta === 'login' || ruta === 'signup') && <Login2 ruta={ruta} cambioRuta={cambioRuta} />}
+                {ruta === 'notas' && <AreaNuevaNota setearNota={setearNota} agregarNuevasNotas={agregarNuevasNotas} />}
+                {/* <Login2 ruta={ruta} cambioRuta={cambioRuta} />
+                <AreaNuevaNota setearNota={setearNota} agregarNuevasNotas={agregarNuevasNotas} /> */}
+                {ruta === 'notas' && listaNotas.length === 0 ? 
                     <div className="div-sin-notas">No hay notas que mostrar</div> : 
+                 ruta === 'notas' &&
                     <div className="lista-notas">
                         <ul>
                             {listaNotas.map( (notita, indice) => {
@@ -72,7 +67,8 @@ function App() {
                                 />
                             })}               
                         </ul>
-                    </div>}
+                    </div>
+                }
             </div>   
             <Footer />
         </>

@@ -83,6 +83,7 @@
 
 .contenedor-login a {
     color: #000075;
+    text-decoration: none;
     font-style: italic;
 }
 
