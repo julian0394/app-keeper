@@ -63,18 +63,18 @@
 }
     .input-form input:focus + label,
     .input-form input:active + label,
-    .input-form input:not(:placeholder-shown) + label {
+    .input-form input:not(:placeholder-shown) + label { /*LO MANTIENE CUANDO NO ES VISIBLE EL PH (osea si hay algo escrito)*/
         color: #d39f10;
         font-size: 0.8rem;
         font-weight: 500;
         background-color: #fff;
-        transform: translateY(-18px);
-            -webkit-transform: translateY(-18px);
-            -moz-transform: translateY(-18px);
-            -ms-transform: translateY(-18px);
-            -o-transform: translateY(-18px);
+        transform: translateY(-20px);
+        -webkit-transform: translateY(-20px);
+        -moz-transform: translateY(-20px);
+        -ms-transform: translateY(-20px);
+        -o-transform: translateY(-20px);
         padding: 0 5px;
-    }
+}
 
 .contenedor-login .registro {
     font-size: 1rem;

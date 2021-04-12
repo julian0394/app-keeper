@@ -6,6 +6,7 @@ import Footer from './footer/Footer';
 import Nota from './nota/Nota';
 import AreaNuevaNota from './areaNuevaNota/AreaNuevaNota';
 import Login from './login/Login';
+import Login2 from './login/Login2';
 // import notas from '../notas';
 
 function App() {
@@ -27,10 +28,17 @@ function App() {
     }
 
     //STATE DE RUTA PARA INICIO DE SESIÓN, REGISTRO Y USO
-    const [ruta, setRuta] = useState('login');
+    const [ruta, setRuta] = useState({
+        inicio: true,
+        registro: false,
+        ingreso: false
+    });
 
-    function cambiarRuta(destino) {
-        setRuta(destino);
+    function cambiarRuta() {
+        
+        setRuta( (valorPrev) => {
+            return !valorPrev;
+        });
     }
 
     function borrarNota(indiceABorrar) {
@@ -47,7 +55,8 @@ function App() {
         <>
             <Header />           
             <div className="div-logeado"> 
-                <Login />
+                {/* {ruta === 'login' ? <Login2 /> : <AreaNuevaNota />} */}
+                <Login2 ruta={ruta} setRuta={setRuta} />
                 <AreaNuevaNota setearNota={setearNota} agregarNuevasNotas={agregarNuevasNotas} />
                 {listaNotas.length === 0 ? 
                     <div className="div-sin-notas">No hay notas que mostrar</div> : 
