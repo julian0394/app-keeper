@@ -1,4 +1,4 @@
-.contenedor-login {
+.contenedor-ingreso {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,7 +13,7 @@
     margin: 60px auto;
 }
 
-.contenedor-login h1{
+.contenedor-ingreso h1{
     font-size: 1.5rem;
     margin: 50px 0 60px;
 }
@@ -76,22 +76,22 @@
         padding: 0 5px;
 }
 
-.contenedor-login .registro {
+.contenedor-ingreso .registro {
     font-size: 1rem;
     margin-bottom: 60px;
 }
 
-.contenedor-login a {
-    color: #000075;
+.contenedor-ingreso a {
+    color: rgb(2, 2, 199);
     text-decoration: none;
     font-style: italic;
 }
 
-.contenedor-login a:focus {
+.contenedor-ingreso a:focus {
     color: blue;
 }
 
-.contenedor-login button {
+.contenedor-ingreso button {
     display: block;
     cursor: pointer;
     margin: 0 auto;
@@ -110,12 +110,12 @@
         -o-border-radius: 6px;  
     margin-bottom: 60px;
 }
-    .contenedor-login button:hover {
+    .contenedor-ingreso button:hover {
         background-color: #fdc019;
         border: 2px solid #fdc019;
     }
-    .contenedor-login button:active,
-    .contenedor-login button:focus {
+    .contenedor-ingreso button:active,
+    .contenedor-ingreso button:focus {
         background-color: #d39f10;
         border: 2px solid #d39f10;
         transform: scale(0.98);
