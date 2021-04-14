@@ -1,4 +1,3 @@
-
 import React, {useState, useEffect} from 'react';
 
 import Header from './header/Header';
@@ -6,9 +5,6 @@ import Footer from './footer/Footer';
 import Nota from './nota/Nota';
 import AreaNuevaNota from './areaNuevaNota/AreaNuevaNota';
 import Ingreso from './ingreso/Ingreso';
-// import Login from './login/Login';
-// import Login2 from './ingreso/Login2';
-// import notas from '../notas';
 
 function App() {
     //STATE DE NOTA
@@ -51,7 +47,6 @@ function App() {
         .then( response => response.json() )
         .then( data => console.log(data) )
     })
-
 
     return (
         <>
