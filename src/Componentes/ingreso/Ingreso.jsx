@@ -5,7 +5,7 @@ import './ingreso.css';
 
 const Ingreso = (props) => {
 
-    function manejoClickForm(evento, nuevaRuta) {
+    function alCambiarRuta(evento, nuevaRuta) {
         evento.preventDefault();
         props.cambioRuta(nuevaRuta);
     }
@@ -13,8 +13,11 @@ const Ingreso = (props) => {
     return (  
         <div className="contenedor-ingreso">
             {props.ruta === 'login' 
-                ? <Login ruta={props.ruta} cambioRuta={props.cambioRuta} manejoClickForm={manejoClickForm} /> 
-                : props.ruta === 'registro' && <Registro ruta={props.ruta} cambioRuta={props.cambioRuta} manejoClickForm={manejoClickForm} />
+                ? <Login 
+                        ruta={props.ruta} 
+                        cambioRuta={props.cambioRuta}
+                        alCambiarRuta={alCambiarRuta} /> 
+                : props.ruta === 'registro' && <Registro ruta={props.ruta} cambioRuta={props.cambioRuta} alCambiarRuta={alCambiarRuta} />
             }
         </div>
     );

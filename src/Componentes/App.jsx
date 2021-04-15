@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 
 import Header from './header/Header';
 import Footer from './footer/Footer';
@@ -42,11 +42,11 @@ function App() {
     }
 
     //METODO QUE SE ACTIVA AL RENDERIZARSE EL COMPONENTE APP
-    useEffect( ()=> {
-        fetch('http://localhost:3000')
-        .then( response => response.json() )
-        .then( data => console.log(data) )
-    })
+    // useEffect( ()=> {
+    //     fetch('http://localhost:3000')
+    //     .then( response => response.json() )
+    //     .then( data => console.log(data) )
+    // })
 
     return (
         <>
