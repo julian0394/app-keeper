@@ -1,5 +1,5 @@
 import React from 'react';
-import './footer.css';
+import '../estilosComponentes/footer.css';
 
 // Año automatico para copyright.
 const anio = new Date().getFullYear(); //"Anio" para no usar Ñ.

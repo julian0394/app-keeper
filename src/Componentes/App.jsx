@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 
-import Header from './header/Header';
-import Footer from './footer/Footer';
-import Nota from './nota/Nota';
-import AreaNuevaNota from './areaNuevaNota/AreaNuevaNota';
+import Header from './Header';
+import Footer from './Footer';
+import Nota from './Nota';
+import AreaNuevaNota from './AreaNuevaNota';
 import Ingreso from './ingreso/Ingreso';
 
 function App() {
@@ -41,6 +41,18 @@ function App() {
         setRuta(nuevaRuta)
     }
 
+    //STATE DE USUARIO ACTIVO PARA BUSCAR SUS NOTAS
+    const [usuarioActivo, setUsuarioActivo] = useState({
+        nombreUsuario: '',
+        mailUsuario: '',
+        cantNotas: '',
+        fechaRegistro: ''
+    });
+
+    function activarUsuario(usuarioIngresado) {
+        setUsuarioActivo(usuarioIngresado);
+    }
+
     //METODO QUE SE ACTIVA AL RENDERIZARSE EL COMPONENTE APP
     // useEffect( ()=> {
     //     fetch('http://localhost:3000')
@@ -53,7 +65,13 @@ function App() {
             <Header ruta={ruta} cambioRuta={cambioRuta} />           
             <div className="div-logeado"> 
                 {/* {(ruta === 'login' || ruta === 'registro') && <Login2 ruta={ruta} cambioRuta={cambioRuta} />} */}
-                {(ruta === 'login' || ruta === 'registro') && <Ingreso ruta={ruta} cambioRuta={cambioRuta} />}
+                {(ruta === 'login' || ruta === 'registro') && 
+                    <Ingreso 
+                        ruta={ruta} 
+                        cambioRuta={cambioRuta}
+                        activarUsuario={activarUsuario} 
+                    />
+                }
                 {ruta === 'notas' && <AreaNuevaNota setearNota={setearNota} agregarNuevasNotas={agregarNuevasNotas} />}
                 {ruta === 'notas' && listaNotas.length === 0 
                     ? <div className="div-sin-notas">No hay notas que mostrar</div> 

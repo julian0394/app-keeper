@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import InputFormulario from '../inputFormulario/InputFormulario';
+import InputFormulario from './InputFormulario';
 
 function Registro(props) {
     // RECIBE EL STATE DEL INPUT INDIVIDUAL, LO ALMACENA Y LO MANDA AL SERVER
@@ -38,11 +38,9 @@ function Registro(props) {
             .then( response => response.json() )
             .then( usuario => {
                 if(usuario) 
-                    // props.cambioRuta('notas');
-                    console.log('SEEEE');
-                // else if(data === 'Error al logearse') {
-                //     setRegistroIncorrecto(1);
-                // }
+                    props.cambioRuta('notas');
+                else 
+                    setRegistroIncorrecto(1);
             })
         }
     }

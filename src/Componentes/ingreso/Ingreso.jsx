@@ -1,7 +1,7 @@
 import React from 'react';
-import Login from './login/Login';
-import Registro from './registro/Registro';
-import './ingreso.css';
+import Login from './Login';
+import Registro from './Registro';
+import '../../estilosComponentes/ingreso.css';
 
 const Ingreso = (props) => {
 
@@ -9,7 +9,7 @@ const Ingreso = (props) => {
         evento.preventDefault();
         props.cambioRuta(nuevaRuta);
     }
-
+ 
     return (  
         <div className="contenedor-ingreso">
             {props.ruta === 'login' 

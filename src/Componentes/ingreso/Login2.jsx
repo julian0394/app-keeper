@@ -1,6 +1,6 @@
 import React from 'react';
-import './ingreso.css';
-import InputFormulario from './inputFormulario/InputFormulario';
+import '../../estilosComponentes/ingreso.css';
+import InputFormulario from './InputFormulario';
 
 
 const Login2 = (props) => {

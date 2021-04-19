@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import InputFormulario from '../inputFormulario/InputFormulario';
-import '../icono-error.png';
+import InputFormulario from './InputFormulario';
+import './icono-error.png';
 
 function Login(props) {
     // RECIBE EL STATE DEL INPUT INDIVIDUAL, LO ALMACENA Y LO MANDA AL SERVER
@@ -43,13 +43,23 @@ function Login(props) {
                 })
             })
             .then( response => response.json() )
-            .then( data => {
-                if(data === 'Exito') 
+            .then( usuarioDB => {
+                if(usuarioDB.id) {
+                    // this.props.loadUser(user);
                     props.cambioRuta('notas');
-                else if(data === 'Error al logearse') {
-                    setLoginIncorrecto(1);
                 }
+                // else if(data === 'Error al logearse') {
+                //     setLoginIncorrecto(1);
+                // }
             })
+            // .then( response => response.json() )
+            // .then( data => {
+            //     if(data === 'Exito') 
+            //         props.cambioRuta('notas');
+            //     else if(data === 'Error al logearse') {
+            //         setLoginIncorrecto(1);
+            //     }
+            // })
         }
 
     }
