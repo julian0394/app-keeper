@@ -45,13 +45,15 @@ function Login(props) {
             .then( response => response.json() )
             .then( usuarioDB => {
                 if(usuarioDB.id) {
+                    console.log('usuarioDB', usuarioDB);
+                    props.instanciarUsuario(usuarioDB);
                     // this.props.loadUser(user);
                     props.cambioRuta('notas');
                 }
                 // else if(data === 'Error al logearse') {
                 //     setLoginIncorrecto(1);
                 // }
-            })
+            });
             // .then( response => response.json() )
             // .then( data => {
             //     if(data === 'Exito') 
@@ -61,7 +63,6 @@ function Login(props) {
             //     }
             // })
         }
-
     }
 
     return (
@@ -87,7 +88,7 @@ function Login(props) {
                 }
                 <button onClick={manejoClickLogin}>Ingresar</button>
             </form>
-            <p className="registro">No tienes una cuenta?  
+            <p className="registroEInicio">No tienes una cuenta?  
                 <a onClick={(evento) => props.alCambiarRuta(evento, 'registro')} 
                 href="./register">Registrate!</a>
             </p>            

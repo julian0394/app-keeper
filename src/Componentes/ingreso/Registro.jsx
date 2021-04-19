@@ -21,7 +21,6 @@ function Registro(props) {
     // STATE PARA MOSTRAR EL MENSAJE DE ERROR POR MAL REGISTRO
     const [registroIncorrecto, setRegistroIncorrecto] = useState(0);
     
-   
     function manejoClickRegistro(event) {
         event.preventDefault();
 
@@ -37,8 +36,11 @@ function Registro(props) {
             })
             .then( response => response.json() )
             .then( usuario => {
-                if(usuario) 
+                if(usuario) {
+                    props.instanciarUsuario(usuario)
                     props.cambioRuta('notas');
+
+                }
                 else 
                     setRegistroIncorrecto(1);
             })
@@ -74,8 +76,8 @@ function Registro(props) {
                 }
                 <button onClick={manejoClickRegistro}>Registrarse</button>
             </form>
-            <p className="registro">Ya tienes una cuenta?
-                <a onClick={(evento) => props.alCambiarRuta(evento, 'registro')} href="./login">Inicia sesión!</a>
+            <p className="registroEInicio">Ya tienes una cuenta?
+                <a onClick={(evento) => props.alCambiarRuta(evento, 'login')} href="./login">Inicia sesión!</a>
             </p>        
         </>
     )

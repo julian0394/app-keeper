@@ -16,8 +16,15 @@ const Ingreso = (props) => {
                 ? <Login 
                         ruta={props.ruta} 
                         cambioRuta={props.cambioRuta}
-                        alCambiarRuta={alCambiarRuta} /> 
-                : props.ruta === 'registro' && <Registro ruta={props.ruta} cambioRuta={props.cambioRuta} alCambiarRuta={alCambiarRuta} />
+                        alCambiarRuta={alCambiarRuta} 
+                        instanciarUsuario={props.instanciarUsuario}
+                    /> 
+                : props.ruta === 'registro' && 
+                    <Registro 
+                        ruta={props.ruta} 
+                        cambioRuta={props.cambioRuta} 
+                        alCambiarRuta={alCambiarRuta} 
+                    />
             }
         </div>
     );

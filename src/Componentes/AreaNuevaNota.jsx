@@ -11,17 +11,11 @@ const AreaNuevaNota = (props) => {
     function manejoCambioInput(evento) {
         const {name, value} = evento.target;
         
-        setInput( (valorPrevio) => {
-            if (name === 'titulo')
-                return {
-                    titulo: value,
-                    contenido: valorPrevio.contenido,
-                }
-            else
-                return {
-                    titulo: valorPrevio.titulo,
-                    contenido: value,
-                }
+        setInput( valorPrevio => {
+            return {
+                ...valorPrevio,
+                [name]: value,  // Name va entre [] para que sepa que debe tomar el argumento de la funcion
+            }
         });
     }
 

@@ -76,7 +76,7 @@
         padding: 0 5px;
 }
 
-.contenedor-ingreso .registro {
+.contenedor-ingreso .registroEInicio {
     font-size: 1rem;
     margin-bottom: 60px;
 }
@@ -85,6 +85,7 @@
     color: rgb(2, 2, 199);
     text-decoration: none;
     font-style: italic;
+    margin-left: 3px;
 }
 
 .contenedor-ingreso a:focus {
@@ -132,3 +133,5 @@ p.incorrecto {
     margin-top: -25px;
     margin-bottom: 40px;
 }
+
+

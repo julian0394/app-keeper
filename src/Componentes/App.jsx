@@ -49,8 +49,15 @@ function App() {
         fechaRegistro: ''
     });
 
-    function activarUsuario(usuarioIngresado) {
-        setUsuarioActivo(usuarioIngresado);
+    function instanciarUsuario(usuarioIngresado) {
+        // const {nombreUsuario, mailUsuario, cantNotas, fechaRegistro} = usuarioIngresado;
+        setUsuarioActivo({
+            nombreUsuario: usuarioIngresado.nombreUsuario,
+            mailUsuario: usuarioIngresado.mailUsuario,
+            cantNotas: usuarioIngresado.cantNotas,
+            fechaRegistro: usuarioIngresado.fechaRegistro
+        });
+        console.log('usuario instanciado', usuarioActivo);
     }
 
     //METODO QUE SE ACTIVA AL RENDERIZARSE EL COMPONENTE APP
@@ -69,7 +76,7 @@ function App() {
                     <Ingreso 
                         ruta={ruta} 
                         cambioRuta={cambioRuta}
-                        activarUsuario={activarUsuario} 
+                        instanciarUsuario={instanciarUsuario} 
                     />
                 }
                 {ruta === 'notas' && <AreaNuevaNota setearNota={setearNota} agregarNuevasNotas={agregarNuevasNotas} />}
