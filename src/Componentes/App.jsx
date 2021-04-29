@@ -13,7 +13,7 @@ function App() {
     function setearNota(nuevaNota) {
         setNota(nuevaNota);
         agregarNuevasNotas(nuevaNota);
-    }
+    } 
 
     //STATE DE LISTA DE NOTAS
     const [listaNotas, setListaNotas] = useState([]);
