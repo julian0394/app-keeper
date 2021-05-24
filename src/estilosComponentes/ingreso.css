@@ -47,6 +47,7 @@
 
 .input-form label {
     position: absolute;
+    pointer-events: none;
     top: 13px;
     left: 10px;
     color: gray;
